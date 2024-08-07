@@ -1,0 +1,11 @@
+<span class="input-text">
+  <label [for]="inputId">{{ label }}</label>
+  <input class="border-gradient-focus"
+         [id]="inputId"
+         [type]="type"
+         [placeholder]="placeholder"
+         [value]="value"
+         [disabled]="disabled"
+         (input)="handleInputChange($event)"
+         (blur)="handleBlur()" />
+</span>

@@ -1,0 +1,405 @@
+.cards-root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+@media (min-width: 704px) {
+  .cards-root {
+    flex-direction: row;
+  }
+  .lateral-panel {
+    width: 375px;
+    height: 240px;
+  }
+}
+
+.lateral-panel {
+  width: 483px;
+  height: 900px;
+  background-color: hsla(278, 68%, 11%,1);
+  overflow: hidden;
+  position: relative;
+}
+
+.group-oval {
+  width: 854.9px;
+  height: 923.47px;
+  top: -163px;
+  left: -221px;
+  position: absolute;
+  opacity: 25%;
+  object-fit: cover;
+  filter: blur(50px);
+  overflow: hidden;
+}
+
+.group-oval-mask {
+  width: 483px;
+  height: 900px;
+  background: hsla(278, 68%, 11%,1);
+  mask-image: linear-gradient(transparent 50%, black 100%);
+  mask-size: 100%;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.oval {
+  width: 248px;
+  height: 657px;
+  opacity: 84.74%;
+  transform: rotate(45deg);
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+
+}
+
+.oval-one {
+  top: -163px;
+  left: 307.53px;
+  background-color: hsla(287, 100%, 61%, 1);
+}
+
+.oval-two {
+  top: -116px;
+  left: 458.53px;
+  background-color: hsla(19, 100%, 64%, 1);
+}
+
+.oval-three {
+  top: 120.53px;
+  left: 243.57px;
+  background-color: hsla(210, 100%, 64%, 1);
+}
+
+.graph-container {
+  width: 541px;
+  height: 527px;
+  top: 187px;
+  left: 164px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.graph-card {
+  width: 447px;
+  height: 245px;
+  border-radius: 10px;
+  box-shadow: 13px 13px 34px 0 rgba(0,0,0,0.35);
+}
+
+.group-oval-card {
+  width: 480.31px;
+  height: 506.31px;
+  top: -100px;
+  left: 65px;
+  position: absolute;
+  object-fit: cover;
+  filter: blur(30px);
+  overflow: hidden;
+}
+
+.oval-card {
+  width: 131px;
+  height: 363px;
+  top: 39px;
+  left: 322.68px;
+  transform: rotate(45deg);
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+
+}
+
+.oval-card-one {
+  top: -20px;
+  left: 150px;
+  background-color: hsla(287, 100%, 61%, 1);
+}
+
+.oval-card-two {
+  top: -40px;
+  left: 260px;
+  background-color: hsla(19, 100%, 64%, 1);
+}
+
+.oval-card-three {
+  top: 120px;
+  left: 140px;
+  background-color: hsla(210, 100%, 64%, 1);
+}
+
+.graph-card-front {
+  align-self: flex-start;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(163.95deg, #6348FE 4.74%, #610595 88.83%);
+}
+
+
+.card-user-info-logo {
+  width: 84px;
+  height: 47px;
+  top: 28px;
+  left: 32px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.oval-user-info-logo-one {
+  width: 47px;
+  height: 47px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.oval-user-info-logo-two {
+  width: 21.15px;
+  height: 21.15px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.group-graph-card-user-info {
+  width: 380px;
+  height: 74px;
+  top: 140px;
+  left: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Space Grotesk;
+  color: white;
+}
+
+.card-user-info-number-card {
+  width: 380px;
+  text-align: center;
+  padding: 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 35.73px;
+  letter-spacing: 3.422222137451172px;
+}
+
+.card-user-info-user-info {
+  width: 380px;
+  height: 18px;
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  align-self: center;
+  padding-top: 20px;
+  //padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.card-user-info-user-info-name {
+  width: 300px;
+}
+
+.card-user-info-user-info-date {
+  width: 80px;
+  text-align: right;
+}
+
+
+.graph-card-back {
+  align-self: flex-end;
+  opacity: 100%;
+  z-index: 1;
+  background: linear-gradient(168.73deg, #FFFFFF 5%, #D2D3D9 91.69%);
+}
+
+.group-graph-card-back {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.rectangle-card-security {
+  width: 447px;
+  height: 54px;
+  top: -100px;
+  left: 258px;
+  background-color: hsla(0, 0%, 18%,1);
+}
+
+.rectangle-card-cvv {
+  width: 361px;
+  height: 38px;
+  background-color: hsla(213, 11%, 71%, 1);
+  border-radius: 5px;
+}
+
+.code-cvv {
+  font-family: Space Grotesk;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17.86px;
+  letter-spacing: 2px;
+  text-align: right;
+  color: white;
+  padding: 10px;
+}
+
+.rectangle-card-many {
+  width: 186px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.rectangle-line-row {
+  width: 186px;
+  height: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.rectangle-line {
+  background-color: hsla(213, 11%, 71%, 1);
+}
+
+.rectangle-line-large {
+  width: 115px;
+  height: 4px;
+}
+
+.rectangle-line-medium {
+  width: 46px;
+  height: 4px;
+}
+
+.rectangle-line-short {
+  width: 22px;
+  height: 4px;
+}
+
+.rectangle-line-mini {
+  width: 9px;
+  height: 4px;
+}
+
+// FORMULARIO
+
+.form-card {
+  width: 381px;
+  height: 352px;
+  top: 275px;
+  left: 832px;
+  position: absolute;
+  font-family: Space Grotesk;
+}
+
+.form-card-group-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-card-exp-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card-exp-label label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.31px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.form-card-exp-date {
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.form-card-exp-date input-text {
+  width: 80px;
+}
+
+.form-card-cvc {
+  width: 191px;
+}
+
+.form-card-button-confirm {
+  width: 100%;
+  height: 53px;
+  border-radius: 10px;
+  background-color: hsla(278, 60%, 11%, 1);
+  color: white;
+  font-family: Space Grotesk;
+}
+
+.form-validation-error {
+  font-family: Space Grotesk;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.31px;
+  text-align: left;
+  color: hsla(0, 100%, 66%, 1);
+}
+
+.form-complete {
+  width: 381px;
+  height: 352px;
+  top: 275px;
+  left: 832px;
+  position: absolute;
+  font-family: Space Grotesk;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-complete-check {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(163.95deg, #6348FE 4.74%, #610595 88.83%);
+  align-self: center;
+}
+
+.circle-check {
+  color: white;
+  font-family: "Comic Sans MS";
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-complete-thanks {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 35.73px;
+  letter-spacing: 3.422222137451172px;
+  text-align: center;
+}
+
+.form-complete-message {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.97px;
+  text-align: center;
+  color: hsla(278, 6%, 55%, 1);
+}

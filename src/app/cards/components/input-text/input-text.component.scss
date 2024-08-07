@@ -1,0 +1,37 @@
+.input-text {
+  display: flex;
+  flex-direction: column;
+  //margin-bottom: 1rem;
+}
+
+.input-text label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15.31px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.input-text input {
+  height: 45px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22.97px;
+  text-align: left;
+  color: hsla(278, 68%, 11%, 1);
+  border: 1px solid hsla(278, 3%, 87%, 1);
+}
+
+.input-text input::placeholder {
+  color: hsla(278, 3%, 87%, 1);
+}
+
+--border-gradient-focus {
+  border-image-source: linear-gradient(163.95deg, #6348FE 4.74%, #610595 88.83%);
+}
+
+.input-text input:focus {
+  border: 1px solid var(--border-gradient-focus);
+}
+

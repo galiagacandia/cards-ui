@@ -1,0 +1,132 @@
+<article class="cards-root">
+  <section class="lateral-panel">
+    <div class="group-oval">
+      <div class="oval oval-three"></div>
+      <div class="oval oval-two"></div>
+      <div class="oval oval-one"></div>
+    </div>
+    <div class="group-oval-mask"></div>
+  </section>
+  <section class="graph-container">
+    <section class="graph-card graph-card-front">
+      <section class="group-oval-card">
+        <div class="oval-card oval-card-one"></div>
+        <div class="oval-card oval-card-two"></div>
+        <div class="oval-card oval-card-three"></div>
+      </section>
+      <section class="card-user-info-logo">
+        <div class="oval-user-info-logo-one"></div>
+        <div class="oval-user-info-logo-two"></div>
+      </section>
+      <section class="group-graph-card-user-info">
+        <section class="card-user-info-number-card">
+          {{cardNumberValue}}
+        </section>
+        <section class="card-user-info-user-info">
+          <div class="card-user-info-user-info-name">{{cardHolderName}}</div>
+          <div class="card-user-info-user-info-date">{{cardDateMonth}}/{{cardDateYear}}</div>
+        </section>
+      </section>
+    </section>
+    <section class="graph-card graph-card-back">
+      <section class="group-graph-card-back">
+        <section class="rectangle-card-security"></section>
+        <section class="rectangle-card-cvv">
+          <div class="code-cvv">{{cardCvc}}</div>
+        </section>
+        <section class="rectangle-card-many">
+          <section class="rectangle-line-row">
+            <div class="rectangle-line rectangle-line-large"></div>
+            <div class="rectangle-line rectangle-line-short"></div>
+            <div class="rectangle-line rectangle-line-short"></div>
+            <div class="rectangle-line rectangle-line-mini"></div>
+          </section>
+          <section class="rectangle-line-row">
+            <div class="rectangle-line rectangle-line-short"></div>
+            <div class="rectangle-line rectangle-line-medium"></div>
+            <div class="rectangle-line rectangle-line-medium"></div>
+            <div class="rectangle-line rectangle-line-mini"></div>
+          </section>
+          <section class="rectangle-line-row">
+            <div class="rectangle-line rectangle-line-mini"></div>
+            <div class="rectangle-line rectangle-line-short"></div>
+            <div class="rectangle-line rectangle-line-short"></div>
+            <div class="rectangle-line rectangle-line-large"></div>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+  <section class="form-card" *ngIf="!formSubmitted">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <input-text
+          label = "CARDHOLDER NAME"
+          type = "text"
+          placeholder = "e.g. Jane Appleseed"
+          formControlName = "cardHolderName"
+        ></input-text>
+        <div *ngIf="form.get('cardHolderName')?.touched && form.get('cardHolderName')?.invalid">
+          <small class="form-validation-error" *ngIf="form.get('cardHolderName')?.errors?.required">Can't be blank</small>
+        </div>
+      </div>
+      <br /><br />
+      <div>
+        <input-text
+          label = "CARD NUMBER"
+          placeholder = "e.g. 1234 5678 9123 0000"
+          formControlName = "cardNumber"
+        ></input-text>
+        <div *ngIf="form.get('cardNumber')?.touched && form.get('cardNumber')?.invalid">
+          <small class="form-validation-error" *ngIf="form.get('cardNumber')?.errors?.required">Can't be blank</small>
+          <small class="form-validation-error" *ngIf="form.get('cardNumber')?.errors?.invalidCardNumber">Wrong format, numbers only</small>
+        </div>
+      </div>
+      <br /><br />
+      <section class="form-card-group-row">
+        <section class="form-card-exp-label">
+          <label>EXP. DATE (MM/YY)</label>
+          <section class="form-card-exp-date">
+            <input-text
+              placeholder = "MM"
+              formControlName = "cardDateMonth"
+            ></input-text>
+            <input-text
+              placeholder = "YY"
+              formControlName = "cardDateYear"
+            ></input-text>
+          </section>
+          <div *ngIf="(form.get('cardDateMonth')?.touched && form.get('cardDateMonth')?.invalid) || (form.get('cardDateYear')?.touched && form.get('cardDateYear')?.invalid)">
+            <small class="form-validation-error" *ngIf="form.get('cardDateMonth')?.errors?.required || form.get('cardDateYear')?.errors?.required">Can't be blank</small>
+          </div>
+        </section>
+        <div>
+          <input-text
+            class="form-card-cvc"
+            label = "CVC"
+            placeholder = "e.g. 123"
+            formControlName = "cardCvc"
+          ></input-text>
+          <div *ngIf="form.get('cardCvc')?.touched && form.get('cardCvc')?.invalid">
+            <small class="form-validation-error" *ngIf="form.get('cardCvc')?.errors?.required">Can't be blank</small>
+          </div>
+        </div>
+      </section>
+      <br /><br />
+      <button class="form-card-button-confirm" type="submit">Confirm</button>
+    </form>
+  </section>
+
+  <section class="form-complete" *ngIf="formSubmitted">
+    <section class="form-complete-check">
+      <div class="circle-check">✓</div>
+    </section>
+    <section class="form-complete-thanks">THANK YOU!</section>
+    <section class="form-complete-message">We've added your card details</section>
+    <section>
+      <form>
+        <button class="form-card-button-confirm" type="submit">Continue</button>
+      </form>
+    </section>
+  </section>
+</article>
